@@ -1,16 +1,21 @@
+import configparser
+import codecs
 import pandas as pd
 import pymsteams
 import datetime
 import schedule
 
+# config.ini読込み
+inifile = configparser.ConfigParser()
+# inifile.read('./config.ini')
+inifile.readfp(codecs.open("config.ini", "r", "utf8"))
+
 # def who_has_phone():
-# 統計一般
-webhook = "https://outlook.office.com/webhook/cade7442-15b4-4935-8113-7b42106d541b@e0793d39-0939-496d-b129-198edd916feb/IncomingWebhook/65f51b981f6c4752914e1b708e7f6eb1/09a4ff80-ffd2-4222-9aea-ee9fbe9b9466"
-# 統計テスト
-# webhook = "https://outlook.office.com/webhook/cade7442-15b4-4935-8113-7b42106d541b@e0793d39-0939-496d-b129-198edd916feb/IncomingWebhook/bd45252cee9347659fa3ddc8e76921a9/09a4ff80-ffd2-4222-9aea-ee9fbe9b9466"
+# 一般チャネルへ投稿
+webhook = inifile.get('settings', 'post_test')
 
 # Excelファイルのロード(読み取り専用)
-excel_path = r"C:\Users\masahiro.okazaki\Dropbox\とうけいくん\test.xlsx"
+excel_path = inifile.get('settings', 'excel_path')
 df = pd.read_excel(excel_path, index_col=0)
 print(df)
 
