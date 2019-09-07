@@ -1,0 +1,74 @@
+{
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "0076D7",
+    "summary": "Introducing Toukei",
+    "sections": [{
+        "activityTitle": "![TestImage](https://blogs.yahoo.co.jp/sekaowa4820/GALLERY/show_image_v2.html?id=https%3A%2F%2Fblog-001.west.edge.storage-yahoo.jp%2Fres%2Fblog-c2-58%2Fsekaowa4820%2Ffolder%2F1239631%2F64%2F38076564%2Fimg_0%3F1547708726&i=1)Test",
+        "activitySubtitle": "Test Toukei",
+        "activityImage": "https://teamsnodesample.azurewebsites.net/static/img/image5.png",
+        "facts": [{
+            "name": "Assigned to",
+            "value": "Unassigned"
+        }, {
+            "name": "Due date",
+            "value": "Mon May 01 2017 17:07:18 GMT-0700 (Pacific Daylight Time)"
+        }, {
+            "name": "Status",
+            "value": "Not started"
+        }],
+        "markdown": true
+    }],
+    "potentialAction": [{
+        "@type": "ActionCard",
+        "name": "Add a comment",
+        "inputs": [{
+            "@type": "TextInput",
+            "id": "comment",
+            "isMultiline": false,
+            "title": "Add a comment here for this task"
+        }],
+        "actions": [{
+            "@type": "HttpPOST",
+            "name": "Add comment",
+            "target": "http://..."
+        }]
+    }, {
+        "@type": "ActionCard",
+        "name": "Set due date",
+        "inputs": [{
+            "@type": "DateInput",
+            "id": "dueDate",
+            "title": "Enter a due date for this task"
+        }],
+        "actions": [{
+            "@type": "HttpPOST",
+            "name": "Save",
+            "target": "http://..."
+        }]
+    }, {
+        "@type": "ActionCard",
+        "name": "Change status",
+        "inputs": [{
+            "@type": "MultichoiceInput",
+            "id": "list",
+            "title": "Select a status",
+            "isMultiSelect": "false",
+            "choices": [{
+                "display": "In Progress",
+                "value": "1"
+            }, {
+                "display": "Active",
+                "value": "2"
+            }, {
+                "display": "Closed",
+                "value": "3"
+            }]
+        }],
+        "actions": [{
+            "@type": "HttpPOST",
+            "name": "Save",
+            "target": "http://..."
+        }]
+    }]
+}

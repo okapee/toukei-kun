@@ -12,7 +12,7 @@ inifile.readfp(codecs.open("config.ini", "r", "utf8"))
 
 # def who_has_phone():
 # 一般チャネルへ投稿
-webhook = inifile.get('settings', 'post_test')
+webhook = inifile.get('settings', 'post_common')
 
 # Excelファイルのロード(読み取り専用)
 excel_path = inifile.get('settings', 'excel_path')
