@@ -117,5 +117,6 @@ myTeamsMessage.text("本日の運勢１位は… " + top_horoscope + " です！
 
 myTeamsMessage.printme()
 myTeamsMessage.send()
+
 # Cron化
 # schedule.every().day.at("12:00").do(who_has_phone)
